@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import PageNotFound from "./containers/HomeTemplate/PageNotFound";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { renderRoutesAdmin, renderRoutesHome } from "./routers";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        {renderRoutesHome()}
+        {renderRoutesAdmin()}
+        {/* Trang Home - localhost:3000 */}
+        {/* <Route exact path="/" component={HomePage} /> */}
+
+        {/* Trang About - localhost:3000/about */}
+        {/* <Route path="/about" component={AboutPage} /> */}
+
+        {/* Trang List Movie - localhost:3000/list-movie */}
+        {/* <Route path="/list-movie" component={ListMoviePage} /> */}
+
+        
+
+        {/* Trang không tìm thấy */}
+        <Route path="" component={PageNotFound} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
