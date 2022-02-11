@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -13,7 +14,7 @@ import rootReducer from './reducer';
 import thunk from "redux-thunk";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))  
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>
