@@ -29,10 +29,10 @@ function App() {
         
         
         {/* Auth Page */}
-        <Route path="/auth" component={AuthPage} />
+        <Route exact path="/auth" component={AuthPage} />
 
         {/* Trang không tìm thấy */}
-        <Route path="" component={PageNotFound} />
+        <Route exact path="" component={PageNotFound} />
       </Switch>
     </BrowserRouter>
     </Suspense>

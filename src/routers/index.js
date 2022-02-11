@@ -96,7 +96,7 @@ const routesAdmin = [
 
 const renderRoutesHome = () => {
     return routesHome.map((route, index) => {
-        return <HomeTemplate key={index} exact={route.axact} path={route.path} component={route.component}/>
+        return <HomeTemplate key={index} exact={route.exact} path={route.path} component={route.component}/>
     })
 }
 
