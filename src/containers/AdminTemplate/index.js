@@ -1,13 +1,17 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import React, { useState } from 'react';
+import { Redirect, Route } from 'react-router-dom';
+import NavbarAdmin from './_component/NavbarAdmin';
 
 export default function AdminTemplate(props) {
     const { exact, path, component } = props
-    return (
-        <>
-            <Route exact={exact} path={path} component={component} />
-        </>
-    )
-   
+    if(localStorage.getItem("UserAdmin")){
+        return (
+            <>
+                <NavbarAdmin/> 
+                <Route exact={exact} path={path} component={component} />
+            </>
+        )
+    }
+    
+    return <Redirect to="/auth" />
 }

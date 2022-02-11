@@ -8,6 +8,9 @@ import showTimeInfoReducer from "containers/HomeTemplate/CheckOut/modules/reduce
 import  loadingReducer from "components/Loading/modules/reducer";
 import registerReducer from "containers/HomeTemplate/Register/modules/reducer";
 import updateProfileReducer from "containers/HomeTemplate/Profile/module/reducer";
+import loginApiRedecer from "./../containers/AdminTemplate/AuthPage/modules/reducer";
+import listUserReducer from "../containers/AdminTemplate/UserPage/modules/reducer";
+import listMovieReducer from "../containers/AdminTemplate/FilmsPage/modules/reducer";
 const rootReducer = combineReducers({
     carouselReducer,
     listMovieReducer,
@@ -17,7 +20,12 @@ const rootReducer = combineReducers({
     showTimeInfoReducer,
     loadingReducer,
     registerReducer,
-    updateProfileReducer
+    updateProfileReducer,
+    
+    // admin
+    loginApiRedecer,
+    listUserReducer,
+    listMovieReducer,
     
 })
 

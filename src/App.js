@@ -5,7 +5,7 @@ import { renderRoutesAdmin, renderRoutesHome,renderRoutesCheckOut } from "./rout
 import Loading from "components/Loading";
 import Loader from "components/Loading/loader";
 
-
+import AuthPage from "./containers/AdminTemplate/AuthPage";
 
 
 function App() {
@@ -28,6 +28,8 @@ function App() {
 
         
         
+        {/* Auth Page */}
+        <Route path="/auth" component={AuthPage} />
 
         {/* Trang không tìm thấy */}
         <Route path="" component={PageNotFound} />

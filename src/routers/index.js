@@ -7,11 +7,17 @@ import CheckOutTemplate from "../containers/CheckOutTemplate"
 // import InfoCinema from "../containers/HomeTemplate/InfoCinema"
 // import DetailsMovie from "../containers/HomeTemplate/DetailsMoviePage";
 // import CheckOut from "../containers/HomeTemplate/CheckOut/CheckOut";
+// Admin
+import DashboardPage from "../containers/AdminTemplate/Dashboard";
+import UserPage from "../containers/AdminTemplate/UserPage";
+import FilmsPage from "../containers/AdminTemplate/FilmsPage";
+import AddNew from "../containers/AdminTemplate/FilmsPage/addNew/AddNew";
 
 
 import {lazy} from "react"
 const routesHome = [
     {
+
         exact:true,
         path:"/",
         component:lazy(()=>import("containers/HomeTemplate/HomePage"))
@@ -59,17 +65,38 @@ const routesCheckOut = [
         exact:false,
         path:"/checkout/:maLichChieu",
         component:lazy(()=>import("containers/HomeTemplate/CheckOut/CheckOut")),
+
+
     },
 ]
 
 const routesAdmin = [
-
+    {
+        axact: false,
+        path: "/dashboard",
+        component: DashboardPage
+    },  
+    {
+        axact: false,
+        path: "/users",
+        component: UserPage
+    },
+    {
+        axact: false,
+        path: "/films",
+        component: FilmsPage
+    },
+    {
+        axact: false,
+        path: "/add-new-film",
+        component: AddNew
+    },
 ]
 
 
 const renderRoutesHome = () => {
-    return routesHome?.map((route, index) => {
-        return <HomeTemplate key={index} exact={route.exact} path={route.path} component={route.component}/>
+    return routesHome.map((route, index) => {
+        return <HomeTemplate key={index} exact={route.axact} path={route.path} component={route.component}/>
     })
 }
 
@@ -80,8 +107,8 @@ const renderRoutesCheckOut = () => {
 }
 
 const renderRoutesAdmin = () => {
-    return routesAdmin?.map((route, index) => {
-        return <AdminTemplate key={index} exact={route.exact} path={route.path} component={route.component}/>
+    return routesAdmin.map((route, index) => {
+        return <AdminTemplate key={index} exact={route.axact} path={route.path} component={route.component}/>
     })
 }
 
