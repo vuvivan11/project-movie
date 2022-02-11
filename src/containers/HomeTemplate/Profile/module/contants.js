@@ -1,0 +1,1 @@
+export const UPDATE_PROFILE = "@updateProfile/UPDATE_PROFILE"

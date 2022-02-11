@@ -1,0 +1,30 @@
+.navbar .navbar-nav .nav-link{
+    color: black;
+    transition: all .3s ;
+    margin: 0 20px;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.active{
+    color: #f26b38 !important
+}
+
+
+@media screen and (max-width:768px) {
+    .loginNavbar,
+    .translate-responsive{
+        display: none!important
+    }
+}
+
+@media screen and (max-width:450px) {
+    .nav-logo img {
+        width: 100px!important
+    }
+}
+
+@media screen and (min-width:769px) {
+    .toggleResponsive{
+        display: none;
+    }
+}

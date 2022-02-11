@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+.loginUser{
+background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 1000px;
+font-family: 'Numans', sans-serif;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 620px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: -10px;
+top: -50px;
+}
+
+.form-group span{
+color:  #FFC312;
+}
+
+
+.btn-register{
+color: black;
+background-color: #FFC312;
+padding: 10px 20px;
+border: none;
+outline: 0;
+}
+
+.btn-register:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
