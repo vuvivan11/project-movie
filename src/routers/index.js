@@ -11,7 +11,7 @@ import CheckOutTemplate from "../containers/CheckOutTemplate"
 import DashboardPage from "../containers/AdminTemplate/Dashboard";
 import UserPage from "../containers/AdminTemplate/UserPage";
 import FilmsPage from "../containers/AdminTemplate/FilmsPage";
-import AddNew from "../containers/AdminTemplate/FilmsPage/addNew/AddNew";
+import AddNew from "containers/AdminTemplate/FilmsPage/Add new/AddNew";
 
 
 import {lazy} from "react"
