@@ -1,0 +1,41 @@
+.footer-bottom {
+    padding: 40px 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;    
+    font-size: 16px;
+}
+
+.bottom-content  span:first-child{
+    margin-right: 15px;
+}
+
+.bottom-content  a {
+ margin: 0 15px;
+ opacity: 1;
+ transition: all .3s;
+}
+
+.bottom-content  a:hover {
+    opacity: .8;
+}
+
+.footer-icon svg {
+    margin-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    transition: all .3s ;
+}
+
+.footer-icon svg:hover:first-child{
+    background-color: red;
+}
+.footer-icon svg:hover:nth-child(2){
+    background-color: #4b4bf1;
+}
+.footer-icon svg:hover:last-child{
+    background-color: #40b0f5;
+}
+

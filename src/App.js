@@ -1,13 +1,22 @@
-import PageNotFound from "./containers/HomeTemplate/PageNotFound";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { renderRoutesAdmin, renderRoutesHome } from "./routers";
+import React,{Suspense} from "react";
+import PageNotFound from "./containers/PageNotFound";
+import { BrowserRouter , Route, Switch } from "react-router-dom";
+import { renderRoutesAdmin, renderRoutesHome,renderRoutesCheckOut } from "./routers";
+import Loading from "components/Loading";
+import Loader from "components/Loading/loader";
+
+
+
 
 function App() {
   return (
-    <BrowserRouter>
+    <Suspense fallback={<Loader/>}>
+      <BrowserRouter  >
+      <Loading/>
       <Switch>
         {renderRoutesHome()}
         {renderRoutesAdmin()}
+        {renderRoutesCheckOut()}
         {/* Trang Home - localhost:3000 */}
         {/* <Route exact path="/" component={HomePage} /> */}
 
@@ -18,11 +27,13 @@ function App() {
         {/* <Route path="/list-movie" component={ListMoviePage} /> */}
 
         
+        
 
         {/* Trang không tìm thấy */}
         <Route path="" component={PageNotFound} />
       </Switch>
     </BrowserRouter>
+    </Suspense>
   );
 }
 

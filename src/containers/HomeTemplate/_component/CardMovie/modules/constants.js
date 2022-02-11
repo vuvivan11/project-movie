@@ -1,0 +1,3 @@
+export const RENDER_LIST_OF_MOVIE = "@listMovie/RENDER_LIST_OF_MOVIE";
+export const RENDER_MOVIE_NOW_SHOWING = "@movieNowShowing/RENDER_MOVIE_NOW_SHOWING";
+export const RENDER_MOVIE_COMING_SOON = "@movieComingSoon/RENDER_MOVIE_COMING_SOON"

@@ -1,0 +1,1 @@
+export const RENDER_MENU_CINEMA = "@menuCinema/RENDER_MENU_CINEMA"

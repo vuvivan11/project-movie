@@ -1,0 +1,46 @@
+.image-overplay {
+    opacity: 0;
+    transition: all .3s;
+}
+
+.card-content .image-card:hover .image-overplay {
+    opacity: 1;
+}
+
+.image-button{
+    border: 1px solid #ffffff;
+    color: white;
+    background-color: black;
+    transition: all .3s;
+    text-transform: uppercase;
+    line-height: 40px!important;
+}
+
+.image-button:hover,
+.active-movie,
+.moreButton:hover{
+    color: #ffffff;
+    background-color: #f26b38;
+    border-color: #f26b38;
+}
+
+.non-active-movie {
+    background-color: black;
+    color: white;
+}
+
+.moreButton{
+    padding: 10px;
+    border-color: #f26b38;
+    background-color: #ffffff;
+    transition: all .3s;
+    text-transform: uppercase;
+}
+
+.moreButton a {
+    color: #f26b38;
+}
+
+.moreButton:hover a {
+    color: #ffffff;
+}

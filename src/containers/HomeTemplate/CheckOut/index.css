@@ -1,0 +1,44 @@
+.trapezoid {
+    border-bottom: 50px solid #b9b9b9;
+    border-left: 25px solid white;
+    border-right: 25px solid white;
+    height: 0;
+    width: 80%;
+    filter: drop-shadow(0 128px 63px rgba(8,8,8,0.38));
+    -webkit-filter: drop-shadow(0 128px 63px rgba(8,8,8,0.38));
+    -moz-filter:drop-shadow(0 128px 63px rgba(8,8,8,0.38));
+  }
+
+.seat {
+  width: 35px;
+  height: 35px;
+  line-height: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px;
+  background-color: rgb(123,122,122);
+  color: #fff;
+}
+
+.bookedSeat {
+  background-color: rgb(232,76,76);
+  cursor: no-drop;
+}
+
+.selectingSeat {
+  background-color: rgb(18,176,18)!important;
+}
+
+.vipSeat {
+  background-color: #f26b38;
+}
+
+.choiceSeat {
+  background-color: rgb(246,246,246);
+  box-shadow: -1px 2px 18px -6px orange;
+  -webkit-box-shadow: -1px 2px 18px -6px orange;
+  color: orange!important;
+  border:1px solid orange 
+
+}
