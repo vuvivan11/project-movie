@@ -7,7 +7,7 @@ const initialState = {
     keyword: ""
 }
 
-const listMovieReducer = (state = initialState, action) => {
+const listMovieAdminReducer = (state = initialState, action) => {
     switch (action.type) {
         case ActionType.LIST_FILM_REQUEST:
             state.loading = true;
@@ -32,4 +32,4 @@ const listMovieReducer = (state = initialState, action) => {
     }
 }
 
-export default listMovieReducer
+export default listMovieAdminReducer

@@ -1,5 +1,5 @@
 import { UPDATE_PROFILE} from "./contants"
-import api from "utils/ApiUtils"
+import api from "utils/apiUtils"
 
 export const actUpdateProfile = () => {
     return (dispatch) => {

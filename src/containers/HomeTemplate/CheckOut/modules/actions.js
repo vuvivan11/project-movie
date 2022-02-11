@@ -1,5 +1,5 @@
 import * as ActionType from "./constant"
-import api from "utils/ApiUtils";
+import api from "utils/apiUtils";
 import {DISPLAY_LOADING_ACTION,HIDE_LOADING_ACTION} from "components/Loading/modules/actions"
 
 

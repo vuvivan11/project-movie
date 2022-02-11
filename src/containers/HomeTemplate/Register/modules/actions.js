@@ -1,6 +1,6 @@
 import { REGISTER_FAILED, REGISTER_SUCCESS } from "./contants";
 import { actLogin } from "containers/HomeTemplate/Login/modules/actions";
-import api from "utils/ApiUtils"
+import api from "utils/apiUtils"
 
 export const actRegister = (user,history) => {
     return (dispatch) => {
