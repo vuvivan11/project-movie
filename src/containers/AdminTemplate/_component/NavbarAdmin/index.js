@@ -12,7 +12,7 @@ export default function NavbarAdmin() {
 
 
     return (
-        <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+        <nav className="navbar navbar-expand-md">
             {/* Brand */}
             <a className="navbar-brand" href="#navbar">
                 Admin

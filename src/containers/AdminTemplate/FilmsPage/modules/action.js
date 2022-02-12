@@ -25,7 +25,7 @@ export const actFetchListMovieApi = () => {
     return dispatch => {
         dispatch(actListMovieRequest())
         api
-            .get("QuanLyPhim/LayDanhSachPhim?maNhom=GP02")
+            .get("QuanLyPhim/LayDanhSachPhim?maNhom=GP01")
             .then((result) => {
                 dispatch(actListMovieSuccess(result.data.content))
             })

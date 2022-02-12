@@ -4,9 +4,9 @@ import { actFetchListMovieApi } from './modules/action';
 import FilmItem from "./FilmItem";
 
 export default function Films() {
-  const loading = useSelector(state => state.listMovieReducer.loading);
-  let data = useSelector(state => state.listMovieReducer.data);
-  let keyword = useSelector(state => state.listMovieReducer.keyword);
+  const loading = useSelector(state => state.listMovieAdminReducer.loading);
+  let data = useSelector(state => state.listMovieAdminReducer.data);
+  let keyword = useSelector(state => state.listMovieAdminReducer.keyword);
 
 
   const dispatch = useDispatch()

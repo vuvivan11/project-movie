@@ -26,7 +26,8 @@ const AddNew = () => {
         sapChieu: false,
         hot: false,
         danhGia: 0,
-        hinhAnh: {}
+        hinhAnh: {},
+        maNhom: "GP01"
     })
 
     const onFormLayoutChange = ({ size }) => {
@@ -79,11 +80,22 @@ const AddNew = () => {
         reader.onload = (event) => {
             setSrcImg(event.target.result)
         }
+        
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(state);
+    console.log(state.hinhAnh);
+
+    const handleSubmit = () => {
+        let formData = new FormData();
+        // for (let key in values){
+        //     if(key !== "hinhAnh"){
+        //         formData.append(key, values[key]);
+        //     }else{
+        //         formData.append("File", )
+        //     }
+        // }
+
+        // console.log("formData", formData.get("trailer"));
     }
 
     return (
