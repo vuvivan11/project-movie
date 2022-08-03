@@ -1,6 +1,6 @@
 import * as ActionType from "./constants";
 
-import api from "./../../../../utils/apiUtils"
+import { apiAdmin } from "./../../../../utils/apiUtils"
 
 const actLoginRequest = () => {
     return {
@@ -25,24 +25,24 @@ const actLoginFailed = (error) => {
 export const actLoginApi = (user, history) => {
     return (dispatch) => {
         dispatch(actLoginRequest());
-        api
+        apiAdmin
             .post("QuanLyNguoiDung/DangNhap", user)
             .then((result) => {
                 // kiểm tra mã loại người dùng
-                    if(result.data.content.maLoaiNguoiDung === "KhachHang"){
-                        return Promise.reject({
-                            response: {
-                                data: {
-                                    content: "Tài khoản bạn không có quyền truy cập"
-                                }
+                if (result.data.content.maLoaiNguoiDung === "KhachHang") {
+                    return Promise.reject({
+                        response: {
+                            data: {
+                                content: "Tài khoản bạn không có quyền truy cập"
                             }
-                        })
-                    }
+                        }
+                    })
+                }
 
                 // lưu thông tin user vào localstorage
-                    localStorage.setItem("UserAdmin", JSON.stringify(result.data.content))
+                localStorage.setItem("UserAdmin", JSON.stringify(result.data.content))
                 // chuyển trang
-                    history.replace("/dashboard")
+                history.replace("/dashboard")
                 dispatch(actLoginSuccess(result.data.content))
             })
             .catch((error) => {

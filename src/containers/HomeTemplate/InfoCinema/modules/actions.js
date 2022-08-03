@@ -1,14 +1,14 @@
 import * as ActionType from "./constants"
-import api from "utils/apiUtils"
+import { apiHome } from "../../../../utils/apiUtils";
 
 export const actListCinema = () => {
     return dispatch => {
-        api
+        apiHome
             .get("QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01")
-            .then((result)=>{
+            .then((result) => {
                 dispatch(actListCinemaSuccess(result.data.content))
             })
-            .catch((error)=>{
+            .catch((error) => {
                 console.log(error)
             })
     }
@@ -16,7 +16,7 @@ export const actListCinema = () => {
 
 const actListCinemaSuccess = (data) => {
     return {
-        type:ActionType.RENDER_MENU_CINEMA,
-        payload:data
+        type: ActionType.RENDER_MENU_CINEMA,
+        payload: data
     }
 }

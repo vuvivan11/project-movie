@@ -1,5 +1,5 @@
 import * as ActionType from "./constants";
-import api from "./../../../../utils/apiUtils"
+import { apiAdmin } from "./../../../../utils/apiUtils"
 
 const actListUserRequest = () => {
     return {
@@ -26,7 +26,7 @@ const actListUserFailed = (error) => {
 export const actFetchUserList = () => {
     return (dispatch) => {
         dispatch(actListUserRequest());
-        api
+        apiAdmin
             .get("QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01")
             .then((result) => {
                 dispatch(actListUserSuccess(result.data.content))
@@ -40,7 +40,7 @@ export const actFetchUserList = () => {
 export const actDeleteUserApi = (user) => {
     return (dispatch) => {
         dispatch(actListUserRequest());
-        api
+        apiAdmin
             .delete(`QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${user}`)
             .then((result) => {
                 alert("Xóa thành công tài khoản " + user)
@@ -56,7 +56,7 @@ export const actDeleteUserApi = (user) => {
 export const actAddUserApi = (user) => {
     return (dispatch) => {
         dispatch(actListUserRequest());
-        api
+        apiAdmin
             .post("QuanLyNguoiDung/ThemNguoiDung", user)
             .then((result) => {
                 dispatch(actFetchUserList())
@@ -72,7 +72,7 @@ export const actAddUserApi = (user) => {
 export const actUpdateUserApi = (user) => {
     return dispatch => {
         dispatch(actListUserRequest());
-        api
+        apiAdmin
             .put("QuanLyNguoiDung/CapNhatThongTinNguoiDung", user)
             .then((result) => {
                 dispatch(actFetchUserList())

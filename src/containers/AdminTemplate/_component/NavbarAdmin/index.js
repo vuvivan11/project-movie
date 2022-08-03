@@ -6,7 +6,7 @@ export default function NavbarAdmin() {
     const hanldeLogOut = () => {
         if (localStorage.getItem("UserAdmin")) {
             localStorage.clear();
-            history.push('/auth'); 
+            history.push('/auth');
         }
     }
 
@@ -69,7 +69,7 @@ export default function NavbarAdmin() {
                 </ul>
             </div>
             <div>
-                <button className='btn danger text-white' style={{border: "none"}} onClick={(hanldeLogOut)}>Log out</button>
+                <button className='btn danger text-white' style={{ border: "none" }} onClick={(hanldeLogOut)}>Log out</button>
             </div>
         </nav>
     )

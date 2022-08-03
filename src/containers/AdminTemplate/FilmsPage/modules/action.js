@@ -1,5 +1,5 @@
 import * as ActionType from "./constants";
-import api from "./../../../../utils/apiUtils";
+import { apiAdmin } from "./../../../../utils/apiUtils";
 
 const actListMovieRequest = () => {
     return {
@@ -24,7 +24,7 @@ const actListMovieFailed = (error) => {
 export const actFetchListMovieApi = () => {
     return dispatch => {
         dispatch(actListMovieRequest())
-        api
+        apiAdmin
             .get("QuanLyPhim/LayDanhSachPhim?maNhom=GP01")
             .then((result) => {
                 dispatch(actListMovieSuccess(result.data.content))
@@ -37,7 +37,7 @@ export const actFetchListMovieApi = () => {
 
 export const actDeleteMovieApi = (maPhim) => {
     return dispatch => {
-        api
+        apiAdmin
             .delete(`QuanLyPhim/XoaPhim?MaPhim=${maPhim}`)
             .then((result) => {
                 alert("Xóa thành công")

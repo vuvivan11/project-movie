@@ -1,11 +1,11 @@
 import * as ActionType from "./constants"
-import api from "utils/apiUtils"
+import { apiHome } from "../../../../../utils/apiUtils"
 
 export const actListMovie = () => {
-    return(dispatch) => {
-        api
+    return (dispatch) => {
+        apiHome
             .get("QuanLyPhim/LayDanhSachPhim?maNhom=GP01")
-            .then((result)=>{
+            .then((result) => {
                 dispatch(actListMovieSuccess(result.data.content))
             })
     }
@@ -13,7 +13,7 @@ export const actListMovie = () => {
 
 const actListMovieSuccess = (data) => {
     return {
-        type:ActionType.RENDER_LIST_OF_MOVIE,
-        payload:data
+        type: ActionType.RENDER_LIST_OF_MOVIE,
+        payload: data
     }
 }

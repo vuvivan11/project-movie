@@ -1,18 +1,18 @@
 import * as ActionType from "./constants"
-import api from "utils/apiUtils"
+import { apiHome } from "../../../../utils/apiUtils";
 
-export const actLogin = (user,history) => {
-    return(dispatch) => {
+export const actLogin = (user, history) => {
+    return (dispatch) => {
         dispatch(actLoginRequest());
-        api
-            .post("QuanLyNguoiDung/DangNhap",user)
-            .then((result)=>{
-                
-                localStorage.setItem("USER_LOGIN",JSON.stringify(result.data.content));
+        apiHome
+            .post("QuanLyNguoiDung/DangNhap", user)
+            .then((result) => {
+
+                localStorage.setItem("USER_LOGIN", JSON.stringify(result.data.content));
                 history.push("/")
                 dispatch(actLoginSuccess(result.data.content))
             })
-            .catch((error)=>{
+            .catch((error) => {
                 dispatch(actLoginFailed(error))
             })
     }
@@ -20,36 +20,36 @@ export const actLogin = (user,history) => {
 
 export const actGetInfoUser = () => {
     return (dispatch) => {
-        api.post("QuanLyNguoiDung/ThongTinTaiKhoan")
-            .then((result)=>{
+        apiHome.post("QuanLyNguoiDung/ThongTinTaiKhoan")
+            .then((result) => {
                 dispatch({
-                    type:ActionType.GET_INFO_USER,
-                    payload:result.data.content
-                })  
+                    type: ActionType.GET_INFO_USER,
+                    payload: result.data.content
+                })
             })
-            .catch((error)=>{
+            .catch((error) => {
                 console.log(error)
-            })     
+            })
     }
 }
 
 
 const actLoginRequest = () => {
     return {
-        type:ActionType.LOGIN_REQUEST
+        type: ActionType.LOGIN_REQUEST
     }
 }
 
 const actLoginSuccess = (data) => {
     return {
-        type:ActionType.LOGIN_SUCCESS,
-        payload:data
+        type: ActionType.LOGIN_SUCCESS,
+        payload: data
     }
 }
 
 const actLoginFailed = (error) => {
     return {
-        type:ActionType.LOGIN_FAILED,
-        payload:error
+        type: ActionType.LOGIN_FAILED,
+        payload: error
     }
 }

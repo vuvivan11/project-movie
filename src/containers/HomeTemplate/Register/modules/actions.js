@@ -1,19 +1,19 @@
 import { REGISTER_FAILED, REGISTER_SUCCESS } from "./contants";
 import { actLogin } from "containers/HomeTemplate/Login/modules/actions";
-import api from "utils/apiUtils"
+import { apiHome } from "../../../../utils/apiUtils";
 
-export const actRegister = (user,history) => {
+export const actRegister = (user, history) => {
     return (dispatch) => {
-        api
-            .post("QuanLyNguoiDung/DangKy",user)
-            .then((result)=>{
+        apiHome
+            .post("QuanLyNguoiDung/DangKy", user)
+            .then((result) => {
                 console.log(result.data)
-                localStorage.setItem("USER_LOGIN",JSON.stringify(result.data.content));
+                localStorage.setItem("USER_LOGIN", JSON.stringify(result.data.content));
                 dispatch(actRegisterSuccess(result.data.content))
                 history.push("/")
-                dispatch(actLogin(user,history))
+                dispatch(actLogin(user, history))
             })
-            .catch((error)=>{
+            .catch((error) => {
                 dispatch(actRegisterFail(error))
             })
     }
@@ -21,14 +21,14 @@ export const actRegister = (user,history) => {
 
 const actRegisterSuccess = (data) => {
     return {
-        type:REGISTER_SUCCESS,
-        payload:data
+        type: REGISTER_SUCCESS,
+        payload: data
     }
 }
 
 const actRegisterFail = (error) => {
     return {
-        type:REGISTER_FAILED,
-        payload:error
+        type: REGISTER_FAILED,
+        payload: error
     }
 }

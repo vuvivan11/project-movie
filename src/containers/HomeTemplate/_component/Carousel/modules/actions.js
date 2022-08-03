@@ -1,42 +1,42 @@
 import * as ActionType from "./constants"
-import api from "utils/apiUtils"
+import { apiHome } from "../../../../../utils/apiUtils"
 
 
 
 export const actFetchCarousel = () => {
-    return(dispatch) =>{
+    return (dispatch) => {
         dispatch(actCarouselRequest());
-        api 
+        apiHome
             .get("QuanLyPhim/LayDanhSachBanner")
-        
-        .then((result)=>{
-            
-            dispatch(actCarouselSucces(result.data.content))
-        })
-        .catch((error)=>{
-            dispatch(actCarouselFailed(error))
-        })
-           
+
+            .then((result) => {
+
+                dispatch(actCarouselSucces(result.data.content))
+            })
+            .catch((error) => {
+                dispatch(actCarouselFailed(error))
+            })
+
     }
 }
 
 
 const actCarouselRequest = () => {
     return {
-        type:ActionType.CAROUSEL_REQUEST
+        type: ActionType.CAROUSEL_REQUEST
     }
 }
 
 const actCarouselSucces = (data) => {
     return {
-        type:ActionType.CAROUSEL_SUCCESS,
-        payload:data
+        type: ActionType.CAROUSEL_SUCCESS,
+        payload: data
     }
 }
 
 const actCarouselFailed = (error) => {
     return {
-        type:ActionType.CAROUSEL_FAILED,
-        payload:error,
+        type: ActionType.CAROUSEL_FAILED,
+        payload: error,
     }
 }
